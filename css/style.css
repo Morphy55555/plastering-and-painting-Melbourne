@@ -345,7 +345,11 @@
 .service-item:hover img {
     transform: scale(1.1);
 }
-
+.service-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
 
 /*** Feature ***/
 @media (min-width: 992px) {
@@ -506,6 +510,30 @@
     z-index: 1;
 }
 
+.testimonial-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin: 15px;
+    padding: 30px;
+}
+.testimonial-text {
+    background: transparent;
+    border: none;
+}
+.stars {
+    font-size: 24px;
+}
+.testimonial-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+.testimonial-text h5 {
+    color: #333;
+    font-weight: 600;
+}
+
 @media (min-width: 768px) {
     .testimonial-carousel::before,
     .testimonial-carousel::after {
@@ -618,20 +646,43 @@
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
+    position: relative;
+    padding-left: 22px;
 }
 
 .footer .btn.btn-link::before {
-    position: relative;
+    position: absolute;
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    margin-right: 10px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
 }
 
 .footer .btn.btn-link:hover {
     color: var(--primary);
     letter-spacing: 1px;
-    box-shadow: none;
+    padding-left: 25px;
+}
+
+.footer .btn.btn-link:hover::before {
+    left: 3px;
+    color: var(--primary);
+}
+
+.footer a {
+    color: var(--light);
+    transition: .3s;
+}
+
+.footer a:hover {
+    color: var(--primary);
+}
+
+.footer p {
+    color: var(--light);
 }
 
 .footer .copyright {
@@ -645,5 +696,202 @@
 }
 
 .footer .copyright a:hover {
+    color: var(--primary);
+}
+
+/* Google Reviews Testimonials */
+.google-reviews-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.overall-rating {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rating-text {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.stars {
+    margin-bottom: 10px;
+}
+
+.stars i {
+    color: #FFC107;
+    font-size: 24px;
+    margin: 0 2px;
+}
+
+.review-count {
+    color: #666;
+    font-size: 16px;
+}
+
+.testimonial-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+}
+
+.reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.reviewer-details h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.google-brand {
+    display: flex;
+    align-items: center;
+}
+
+.google-brand i {
+    font-size: 20px;
+    color: #4285F4;
+}
+
+.stars-row {
+    margin-bottom: 15px;
+}
+
+.stars-row i {
+    color: #FFC107;
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+.review-text {
+    margin-bottom: 15px;
+}
+
+.review-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.review-footer {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    color: #34A853;
+    font-size: 14px;
+}
+
+.verified-badge i {
+    margin-right: 5px;
+}
+
+/* Carousel Navigation */
+.testimonial-carousel .owl-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.testimonial-carousel .owl-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    color: #666 !important;
+    transition: all 0.3s ease;
+}
+
+.testimonial-carousel .owl-nav button:hover {
+    background: #f8f9fa !important;
+    color: #333 !important;
+}
+
+@media (max-width: 768px) {
+    .testimonial-item {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .review-text p {
+        -webkit-line-clamp: 5;
+    }
+}
+
+.footer .contact-info a {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    transition: .3s;
+    position: relative;
+    padding-left: 28px;
+}
+
+.footer .contact-info p {
+    margin-bottom: 5px;
+    padding-left: 28px;
+    position: relative;
+}
+
+.footer .contact-info i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+.footer .contact-info a:hover {
+    color: var(--primary);
+    transform: translateX(3px);
+}
+
+.footer .contact-info a:hover i {
     color: var(--primary);
 }
