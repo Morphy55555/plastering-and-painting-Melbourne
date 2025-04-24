@@ -278,9 +278,10 @@
 .page-header {
     background: linear-gradient(rgba(53, 53, 53, .7), rgba(53, 53, 53, .7)), url(../img/plaster-hero-img.png) center center no-repeat;
     background-size: cover;
-    min-height: 400px;
+    min-height: 250px;
     display: flex;
     align-items: center;
+    padding: 50px 0;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -641,7 +642,7 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #FFFFFF;
+    color: var(--light);
     font-size: 15px;
     font-weight: normal;
     text-transform: capitalize;
@@ -865,7 +866,7 @@
     margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #FFFFFF;
+    color: var(--light);
     font-size: 15px;
     font-weight: normal;
     transition: .3s;
@@ -894,4 +895,82 @@
 
 .footer .contact-info a:hover i {
     color: var(--primary);
+}
+
+/* Contact Section Styles */
+.contact-info-container {
+    padding: 2rem;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-item:hover {
+    color: var(--primary);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-card:hover .icon-box {
+    background: var(--primary);
+    color: var(--light);
+}
+
+.contact-text h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-text p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-info-container {
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 1.5rem;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
 }
